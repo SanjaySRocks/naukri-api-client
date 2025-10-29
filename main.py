@@ -44,7 +44,6 @@ class NaukriAPIClient:
             "content-type": "application/json",
             "origin": "https://www.naukri.com",
             "priority": "u=1, i",
-            "referer": "https://www.naukri.com/mnj/login",
             "sec-ch-ua": '"Brave";v="141", "Not?A_Brand";v="8", "Chromium";v="141"',
             "sec-ch-ua-mobile": "?1",
             "sec-ch-ua-platform": '"Android"',
@@ -368,5 +367,6 @@ if __name__ == "__main__":
     # Make sure logged in
     if client._is_cookie_expired() or not client.session.cookies:
         client.login()
+
 
 
