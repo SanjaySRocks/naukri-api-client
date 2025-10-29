@@ -38,27 +38,32 @@ class NaukriAPIClient:
         # Default headers required by Naukri
         self.headers = {
             "accept": "application/json",
-            "accept-language": "en-US,en;q=0.6",
-            "appid": "135",
-            "clientid": "m0b5",
+            "accept-language": "en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7",
+            "appid": "109",
+            "cache-control": "no-cache",
+            "clientid": "d3skt0p",
             "content-type": "application/json",
-            "origin": "https://www.naukri.com",
+            "gid": "LOCATION,INDUSTRY,EDUCATION,FAREA_ROLE",
+            "pragma": "no-cache",
             "priority": "u=1, i",
-            "sec-ch-ua": '"Brave";v="141", "Not?A_Brand";v="8", "Chromium";v="141"',
-            "sec-ch-ua-mobile": "?1",
-            "sec-ch-ua-platform": '"Android"',
+            "nkparam": "oFYlsMP9SN/18UTJyWR0J4Far8aGlf/RgiTehgjzAfodyCTha++NVMb+jAOJjH4rULRVnn65HS1K0dD3clyVyQ==",
+            "sec-ch-ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": '"Windows"',
             "sec-fetch-dest": "empty",
             "sec-fetch-mode": "cors",
             "sec-fetch-site": "same-origin",
-            "sec-gpc": "1",
             "systemid": "jobseeker",
             "user-agent": (
-                "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) "
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/141.0.0.0 Mobile Safari/537.36"
+                "Chrome/114.0.5735.198 Safari/537.36"
             ),
             "x-requested-with": "XMLHttpRequest",
+            "Referer": "https://www.naukri.com/",
+            "Referrer-Policy": "strict-origin-when-cross-origin",
         }
+
 
         self._load_cookies()
 
@@ -367,6 +372,7 @@ if __name__ == "__main__":
     # Make sure logged in
     if client._is_cookie_expired() or not client.session.cookies:
         client.login()
+
 
 
 
