@@ -37,9 +37,28 @@ class NaukriAPIClient:
 
         # Default headers required by Naukri
         self.headers = {
-            "appid": "103",
+            "accept": "application/json",
+            "accept-language": "en-US,en;q=0.6",
+            "appid": "135",
+            "clientid": "m0b5",
+            "content-type": "application/json",
+            "origin": "https://www.naukri.com",
+            "priority": "u=1, i",
+            "referer": "https://www.naukri.com/mnj/login",
+            "sec-ch-ua": '"Brave";v="141", "Not?A_Brand";v="8", "Chromium";v="141"',
+            "sec-ch-ua-mobile": "?1",
+            "sec-ch-ua-platform": '"Android"',
+            "sec-fetch-dest": "empty",
+            "sec-fetch-mode": "cors",
+            "sec-fetch-site": "same-origin",
+            "sec-gpc": "1",
             "systemid": "jobseeker",
-            "Content-Type": "application/json",
+            "user-agent": (
+                "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/141.0.0.0 Mobile Safari/537.36"
+            ),
+            "x-requested-with": "XMLHttpRequest",
         }
 
         self._load_cookies()
@@ -349,4 +368,5 @@ if __name__ == "__main__":
     # Make sure logged in
     if client._is_cookie_expired() or not client.session.cookies:
         client.login()
+
 
