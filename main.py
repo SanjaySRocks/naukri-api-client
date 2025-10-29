@@ -37,33 +37,10 @@ class NaukriAPIClient:
 
         # Default headers required by Naukri
         self.headers = {
-            "accept": "application/json",
-            "accept-language": "en-IN,en-GB;q=0.9,en-US;q=0.8,en;q=0.7",
-            "appid": "109",
-            "cache-control": "no-cache",
-            "clientid": "d3skt0p",
-            "content-type": "application/json",
-            "gid": "LOCATION,INDUSTRY,EDUCATION,FAREA_ROLE",
-            "pragma": "no-cache",
-            "priority": "u=1, i",
-            "nkparam": "oFYlsMP9SN/18UTJyWR0J4Far8aGlf/RgiTehgjzAfodyCTha++NVMb+jAOJjH4rULRVnn65HS1K0dD3clyVyQ==",
-            "sec-ch-ua": '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
-            "sec-ch-ua-mobile": "?0",
-            "sec-ch-ua-platform": '"Windows"',
-            "sec-fetch-dest": "empty",
-            "sec-fetch-mode": "cors",
-            "sec-fetch-site": "same-origin",
+            "appid": "103",
             "systemid": "jobseeker",
-            "user-agent": (
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/114.0.5735.198 Safari/537.36"
-            ),
-            "x-requested-with": "XMLHttpRequest",
-            "Referer": "https://www.naukri.com/",
-            "Referrer-Policy": "strict-origin-when-cross-origin",
+            "Content-Type": "application/json",
         }
-
 
         self._load_cookies()
 
@@ -372,6 +349,7 @@ if __name__ == "__main__":
     # Make sure logged in
     if client._is_cookie_expired() or not client.session.cookies:
         client.login()
+
 
 
 
