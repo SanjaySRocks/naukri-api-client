@@ -27,5 +27,9 @@ jobs:
         env:
           NAUKRI_USERNAME: ${{ secrets.NAUKRI_USERNAME }}
           NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
+          PROXY_URL: ${{ secrets.PROXY_URL }}
         run: |
+          export HTTP_PROXY=$PROXY_URL
+          export HTTPS_PROXY=$PROXY_URL
+          echo "Proxy configured. Running Naukri client..."
           python naukri_client.py --refresh
