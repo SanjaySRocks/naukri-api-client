@@ -23,15 +23,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Set Proxy Environment
-        run: |
-          echo "HTTP_PROXY=${{ secrets.PROXY_URL }}" >> $GITHUB_ENV
-          echo "HTTPS_PROXY=${{ secrets.PROXY_URL }}" >> $GITHUB_ENV
-          echo "http_proxy=${{ secrets.PROXY_URL }}" >> $GITHUB_ENV
-          echo "https_proxy=${{ secrets.PROXY_URL }}" >> $GITHUB_ENV
-          echo "NO_PROXY=127.0.0.1,localhost" >> $GITHUB_ENV
-          echo "no_proxy=127.0.0.1,localhost" >> $GITHUB_ENV
-
       - name: Run Naukri Automation
         env:
           NAUKRI_USERNAME: ${{ secrets.NAUKRI_USERNAME }}
