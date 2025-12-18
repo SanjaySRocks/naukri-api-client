@@ -27,7 +27,7 @@ jobs:
         env:
           NAUKRI_USERNAME: ${{ secrets.NAUKRI_USERNAME }}
           NAUKRI_PASSWORD: ${{ secrets.NAUKRI_PASSWORD }}
-          PROXY_URL: ${{ secrets.PROXY_URL }}
+          PROXY_URL: ${{ secrets.NEW_PROXY_URL }}
         run: |
           export HTTP_PROXY=$PROXY_URL
           export HTTPS_PROXY=$PROXY_URL
