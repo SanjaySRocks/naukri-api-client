@@ -244,10 +244,11 @@ class NaukriAPIClient:
             "x-requested-with": "XMLHttpRequest"
         }
 
-        # Step 2️⃣ - Add '.' to the end and update
-        headline_with_dot = current_headline.rstrip(".") + "."
+        # Step 2️⃣ - Add 'unix timestamp' to the end and update
+        timestamp = int(time.time())
+        headline_with_ts = f"{current_headline} {timestamp}"
         payload_add = {
-            "profile": {"resumeHeadline": headline_with_dot},
+            "profile": {"resumeHeadline": headline_with_ts},
             "profileId": profile_id
         }
 
@@ -349,6 +350,7 @@ if __name__ == "__main__":
     # Make sure logged in
     if client._is_cookie_expired() or not client.session.cookies:
         client.login()
+
 
 
 
