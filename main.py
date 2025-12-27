@@ -254,7 +254,7 @@ class NaukriAPIClient:
 
         try:
             print("🔄 Step 1: Adding 'unix timestamp' to refresh headline...")
-            print("New Headline : {}", format(headline_with_ts))
+            print(f"New Headline : {headline_with_ts}")
             
             resp_add = self.session.post(url, headers=headers, json=payload_add)
             resp_add.raise_for_status()
@@ -352,6 +352,7 @@ if __name__ == "__main__":
     # Make sure logged in
     if client._is_cookie_expired() or not client.session.cookies:
         client.login()
+
 
 
 
