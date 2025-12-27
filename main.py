@@ -211,7 +211,7 @@ class NaukriAPIClient:
     def refresh_resume_headline(self):
         """
         Refreshes the user's resume headline by temporarily adding and removing
-        a '.' at the end of the current headline. This triggers a 'resume refresh'
+        a 'unix timestamp' at the end of the current headline. This triggers a 'resume refresh'
         on Naukri.
 
         Returns:
@@ -253,7 +253,9 @@ class NaukriAPIClient:
         }
 
         try:
-            print("🔄 Step 1: Adding '.' to refresh headline...")
+            print("🔄 Step 1: Adding 'unix timestamp' to refresh headline...")
+            print("New Headline : {}", format(headline_with_ts))
+            
             resp_add = self.session.post(url, headers=headers, json=payload_add)
             resp_add.raise_for_status()
             if resp_add.status_code != 200:
@@ -350,6 +352,7 @@ if __name__ == "__main__":
     # Make sure logged in
     if client._is_cookie_expired() or not client.session.cookies:
         client.login()
+
 
 
 
